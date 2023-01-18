@@ -65,6 +65,7 @@ for (let i = 0; i < 64; i++) {
 
             let gridIndex = Number(grid.getAttribute('id').substring(5));
             let oneBelow = gridIndex + 8;
+            let oneAbove = gridIndex - 8;
 
             while (GAME[oneBelow].color !== 'blank' && GAME[oneBelow].color !== GAME[gridIndex].color && !GAME[gridIndex].edge.includes('bottom') && !GAME[oneBelow].edge.includes('bottom')) {
                 oneBelow += 8;
@@ -72,6 +73,19 @@ for (let i = 0; i < 64; i++) {
 
             if (GAME[oneBelow].color === GAME[gridIndex].color) {
                 for (i = oneBelow; i !== gridIndex; i -= 8) {
+                    GAME[i].color = GAME[gridIndex].color;
+                    let pieceToChange = document.getElementById('piece-' + GAME[i].gridNum);
+                    pieceToChange.style.backgroundColor = GAME[gridIndex].color;
+                    pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
+                }
+            }
+
+            while (GAME[oneAbove].color !== 'blank' && GAME[oneAbove].color !== GAME[gridIndex].color && !GAME[gridIndex].edge.includes('top') && !GAME[oneAbove].edge.includes('top')) {
+                oneAbove -= 8;
+            }
+
+            if (GAME[oneAbove].color === GAME[gridIndex].color) {
+                for (i = oneAbove; i !== gridIndex; i += 8) {
                     GAME[i].color = GAME[gridIndex].color;
                     let pieceToChange = document.getElementById('piece-' + GAME[i].gridNum);
                     pieceToChange.style.backgroundColor = GAME[gridIndex].color;

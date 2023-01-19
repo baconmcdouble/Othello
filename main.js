@@ -68,6 +68,10 @@ for (let i = 0; i < 64; i++) {
             let oneAbove = gridIndex - 8;
             let oneLeft = gridIndex - 1;
             let oneRight = gridIndex + 1;
+            let oneLeftAbove = gridIndex - 9;
+            let oneRightAbove = gridIndex - 7;
+            let oneLeftBelow = gridIndex + 7;
+            let oneRightBelow = gridIndex + 9;
 
             while (GAME[oneBelow].color !== 'blank' && GAME[oneBelow].color !== GAME[gridIndex].color && !GAME[gridIndex].edge.includes('bottom') && !GAME[oneBelow].edge.includes('bottom')) {
                 oneBelow += 8;
@@ -114,6 +118,58 @@ for (let i = 0; i < 64; i++) {
 
             if (GAME[oneRight].color === GAME[gridIndex].color) {
                 for (i = oneRight; i !== gridIndex; i -= 1) {
+                    GAME[i].color = GAME[gridIndex].color;
+                    let pieceToChange = document.getElementById('piece-' + GAME[i].gridNum);
+                    pieceToChange.style.backgroundColor = GAME[gridIndex].color;
+                    pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
+                }
+            }
+
+            while (GAME[oneLeftAbove].color !== 'blank' && GAME[oneLeftAbove].color !== GAME[gridIndex].color && !GAME[gridIndex].edge.includes('left') && !GAME[oneLeftAbove].edge.includes('left')) {
+                oneLeftAbove -= 9;
+            }
+
+            if (GAME[oneLeftAbove].color === GAME[gridIndex].color) {
+                for (i = oneLeftAbove; i !== gridIndex; i += 9) {
+                    GAME[i].color = GAME[gridIndex].color;
+                    let pieceToChange = document.getElementById('piece-' + GAME[i].gridNum);
+                    pieceToChange.style.backgroundColor = GAME[gridIndex].color;
+                    pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
+                }
+            }
+
+            while (GAME[oneRightAbove].color !== 'blank' && GAME[oneRightAbove].color !== GAME[gridIndex].color && !GAME[gridIndex].edge.includes('right') && !GAME[oneRightAbove].edge.includes('right')) {
+                oneRightAbove -= 7;
+            }
+
+            if (GAME[oneRightAbove].color === GAME[gridIndex].color) {
+                for (i = oneRightAbove; i !== gridIndex; i += 7) {
+                    GAME[i].color = GAME[gridIndex].color;
+                    let pieceToChange = document.getElementById('piece-' + GAME[i].gridNum);
+                    pieceToChange.style.backgroundColor = GAME[gridIndex].color;
+                    pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
+                }
+            }
+
+            while (GAME[oneLeftBelow].color !== 'blank' && GAME[oneLeftBelow].color !== GAME[gridIndex].color && !GAME[gridIndex].edge.includes('bottom') && !GAME[oneBelow].edge.includes('bottom')) {
+                oneLeftBelow += 7;
+            }
+
+            if (GAME[oneLeftBelow].color === GAME[gridIndex].color) {
+                for (i = oneLeftBelow; i !== gridIndex; i -= 7) {
+                    GAME[i].color = GAME[gridIndex].color;
+                    let pieceToChange = document.getElementById('piece-' + GAME[i].gridNum);
+                    pieceToChange.style.backgroundColor = GAME[gridIndex].color;
+                    pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
+                }
+            }
+
+            while (GAME[oneRightBelow].color !== 'blank' && GAME[oneRightBelow].color !== GAME[gridIndex].color && !GAME[gridIndex].edge.includes('bottom') && !GAME[oneBelow].edge.includes('bottom')) {
+                oneRightBelow += 9;
+            }
+
+            if (GAME[oneRightBelow].color === GAME[gridIndex].color) {
+                for (i = oneRightBelow; i !== gridIndex; i -= 9) {
                     GAME[i].color = GAME[gridIndex].color;
                     let pieceToChange = document.getElementById('piece-' + GAME[i].gridNum);
                     pieceToChange.style.backgroundColor = GAME[gridIndex].color;

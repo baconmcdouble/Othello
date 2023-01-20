@@ -1,0 +1,26 @@
+.board {
+    background-color: #20c997;
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(8, 50px);
+    gap: 2px;
+    width: fit-content;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    transform: translate(0, 30%);
+}
+
+.grid {
+    border: solid;
+    height: 50px;
+    width: 50px;
+}
+
+.piece {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin: 2px;
+}

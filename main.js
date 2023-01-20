@@ -52,11 +52,11 @@ for (let i = 0; i < 64; i++) {
             // piece.style.height = '20px';
             // piece.style.width = '20px';
             // piece.style.borderRadius = '50%';
-            piece.style.border = 'solid ' + GAME_TURN;
+            // piece.style.border = 'solid ' + GAME_TURN;
             // piece.style.margin = '2px';
             piece.setAttribute('id', 'piece-' + i);
-            piece.setAttribute('class', 'piece');
-            piece.style.backgroundColor = GAME_TURN;
+            piece.setAttribute('class', 'piece ' + GAME_TURN);
+            // piece.style.backgroundColor = GAME_TURN;
             GAME[i].color = GAME_TURN;
             grid.appendChild(piece);
 
@@ -183,7 +183,16 @@ for (let i = 0; i < 64; i++) {
     }))
 }
 
+let initialPieces = [[27, 'white'], [28, 'black'], [35, 'black'], [36, 'white']];
+initialPieces.forEach((initial) => {
+    const piece = document.createElement('div');
+    piece.setAttribute('id', initial[0]);
+    piece.setAttribute('class', 'piece ' + initial[1]);
+    document.getElementById('grid-' + initial[0]).appendChild(piece);
+})
 
-const whitePiece1 = document.createElement('div');
-whitePiece1.setAttribute('id', 'piece-' + 27);
-whitePiece1.style
+
+// const whitePiece1 = document.createElement('div');
+// whitePiece1.setAttribute('id', 'piece-' + 27);
+// whitePiece1.setAttribute('class', 'piece white');
+// document.getElementById('grid-27').appendChild(whitePiece1);

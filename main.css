@@ -24,3 +24,13 @@
     border-radius: 50%;
     margin: 2px;
 }
+
+.white {
+    border: solid white;
+    background-color: white;
+}
+
+.black {
+    border: solid black;
+    background-color: black;
+}

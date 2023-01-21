@@ -186,8 +186,9 @@ for (let i = 0; i < 64; i++) {
 let initialPieces = [[27, 'white'], [28, 'black'], [35, 'black'], [36, 'white']];
 initialPieces.forEach((initial) => {
     const piece = document.createElement('div');
-    piece.setAttribute('id', initial[0]);
+    piece.setAttribute('id', 'piece-' + initial[0]);
     piece.setAttribute('class', 'piece ' + initial[1]);
+    GAME[initial[0]].color = initial[1];
     document.getElementById('grid-' + initial[0]).appendChild(piece);
 })
 

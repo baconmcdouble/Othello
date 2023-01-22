@@ -22,8 +22,8 @@ for (i = 0; i < 64; i++) {
     GAME.push(pieceObj);
 }
 
-const board = document.createElement('div');
-board.setAttribute('class', 'board');
+// const board = document.createElement('div');
+// board.setAttribute('class', 'board');
 // board.style.backgroundColor = '#ADE792';
 // board.style.display = 'grid';
 // board.style.gridTemplateColumns = 'repeat(8, 30px';
@@ -32,8 +32,8 @@ board.setAttribute('class', 'board');
 // board.style.width = 'fit-content';
 // board.style.padding = '5px'
 
-document.body.appendChild(board);
-
+// document.body.appendChild(board);
+const board = document.querySelector('.board');
 
 
 for (let i = 0; i < 64; i++) {

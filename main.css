@@ -1,3 +1,21 @@
+.container {
+    transform: translate(0, 10%);
+}
+
+#scores {
+    background-color: grey;
+    width: 400px;
+    height: 100px;
+    display: flex;
+    margin: auto;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+.score {
+    display: flex;
+}
+
 .board {
     background-color: #20c997;
     display: grid;
@@ -9,7 +27,6 @@
     align-items: center;
     justify-content: center;
     margin: auto;
-    transform: translate(0, 30%);
 }
 
 .grid {

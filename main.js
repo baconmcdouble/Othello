@@ -22,6 +22,8 @@ for (i = 0; i < 64; i++) {
     GAME.push(pieceObj);
 }
 
+
+
 // const board = document.createElement('div');
 // board.setAttribute('class', 'board');
 // board.style.backgroundColor = '#ADE792';
@@ -84,8 +86,10 @@ for (let i = 0; i < 64; i++) {
                 for (i = oneBelow; i !== gridIndex; i -= 8) {
                     GAME[i].color = GAME[gridIndex].color;
                     let pieceToChange = document.getElementById('piece-' + GAME[i].gridNum);
-                    pieceToChange.style.backgroundColor = GAME[gridIndex].color;
-                    pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
+                    pieceToChange.classList.value = '';
+                    pieceToChange.classList.add('piece', `${GAME[gridIndex].color}`);
+                    // pieceToChange.style.backgroundColor = GAME[gridIndex].color;
+                    // pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
                 }
             }
 
@@ -97,8 +101,10 @@ for (let i = 0; i < 64; i++) {
                 for (i = oneAbove; i !== gridIndex; i += 8) {
                     GAME[i].color = GAME[gridIndex].color;
                     let pieceToChange = document.getElementById('piece-' + GAME[i].gridNum);
-                    pieceToChange.style.backgroundColor = GAME[gridIndex].color;
-                    pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
+                    pieceToChange.classList.value = '';
+                    pieceToChange.classList.add('piece', `${GAME[gridIndex].color}`);
+                    // pieceToChange.style.backgroundColor = GAME[gridIndex].color;
+                    // pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
                 }
             }
 
@@ -110,8 +116,10 @@ for (let i = 0; i < 64; i++) {
                 for (i = oneLeft; i !== gridIndex; i += 1) {
                     GAME[i].color = GAME[gridIndex].color;
                     let pieceToChange = document.getElementById('piece-' + GAME[i].gridNum);
-                    pieceToChange.style.backgroundColor = GAME[gridIndex].color;
-                    pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
+                    pieceToChange.classList.value = '';
+                    pieceToChange.classList.add('piece', `${GAME[gridIndex].color}`);
+                    // pieceToChange.style.backgroundColor = GAME[gridIndex].color;
+                    // pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
                 }
             }
 
@@ -123,8 +131,10 @@ for (let i = 0; i < 64; i++) {
                 for (i = oneRight; i !== gridIndex; i -= 1) {
                     GAME[i].color = GAME[gridIndex].color;
                     let pieceToChange = document.getElementById('piece-' + GAME[i].gridNum);
-                    pieceToChange.style.backgroundColor = GAME[gridIndex].color;
-                    pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
+                    pieceToChange.classList.value = '';
+                    pieceToChange.classList.add('piece', `${GAME[gridIndex].color}`);
+                    // pieceToChange.style.backgroundColor = GAME[gridIndex].color;
+                    // pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
                 }
             }
 
@@ -136,8 +146,10 @@ for (let i = 0; i < 64; i++) {
                 for (i = oneLeftAbove; i !== gridIndex; i += 9) {
                     GAME[i].color = GAME[gridIndex].color;
                     let pieceToChange = document.getElementById('piece-' + GAME[i].gridNum);
-                    pieceToChange.style.backgroundColor = GAME[gridIndex].color;
-                    pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
+                    pieceToChange.classList.value = '';
+                    pieceToChange.classList.add('piece', `${GAME[gridIndex].color}`);
+                    // pieceToChange.style.backgroundColor = GAME[gridIndex].color;
+                    // pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
                 }
             }
 
@@ -149,8 +161,10 @@ for (let i = 0; i < 64; i++) {
                 for (i = oneRightAbove; i !== gridIndex; i += 7) {
                     GAME[i].color = GAME[gridIndex].color;
                     let pieceToChange = document.getElementById('piece-' + GAME[i].gridNum);
-                    pieceToChange.style.backgroundColor = GAME[gridIndex].color;
-                    pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
+                    pieceToChange.classList.value = '';
+                    pieceToChange.classList.add('piece', `${GAME[gridIndex].color}`);
+                    // pieceToChange.style.backgroundColor = GAME[gridIndex].color;
+                    // pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
                 }
             }
 
@@ -162,8 +176,10 @@ for (let i = 0; i < 64; i++) {
                 for (i = oneLeftBelow; i !== gridIndex; i -= 7) {
                     GAME[i].color = GAME[gridIndex].color;
                     let pieceToChange = document.getElementById('piece-' + GAME[i].gridNum);
-                    pieceToChange.style.backgroundColor = GAME[gridIndex].color;
-                    pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
+                    pieceToChange.classList.value = '';
+                    pieceToChange.classList.add('piece', `${GAME[gridIndex].color}`);
+                    // pieceToChange.style.backgroundColor = GAME[gridIndex].color;
+                    // pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
                 }
             }
 
@@ -175,8 +191,10 @@ for (let i = 0; i < 64; i++) {
                 for (i = oneRightBelow; i !== gridIndex; i -= 9) {
                     GAME[i].color = GAME[gridIndex].color;
                     let pieceToChange = document.getElementById('piece-' + GAME[i].gridNum);
-                    pieceToChange.style.backgroundColor = GAME[gridIndex].color;
-                    pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
+                    pieceToChange.classList.value = '';
+                    pieceToChange.classList.add('piece', `${GAME[gridIndex].color}`);
+                    // pieceToChange.style.backgroundColor = GAME[gridIndex].color;
+                    // pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
                 }
             }
         }
@@ -191,6 +209,9 @@ initialPieces.forEach((initial) => {
     GAME[initial[0]].color = initial[1];
     document.getElementById('grid-' + initial[0]).appendChild(piece);
 })
+
+const blackScore = document.getElementById('blackScore');
+const whiteScore = document.getElementById('whiteScore');
 
 
 // const whitePiece1 = document.createElement('div');

@@ -38,6 +38,11 @@ for (i = 0; i < 64; i++) {
 const board = document.querySelector('.board');
 
 
+
+const blackScore = document.getElementById('blackScore');
+const whiteScore = document.getElementById('whiteScore');
+
+
 for (let i = 0; i < 64; i++) {
     const grid = document.createElement('div');
     // grid.style.border = 'solid';
@@ -91,6 +96,10 @@ for (let i = 0; i < 64; i++) {
                     // pieceToChange.style.backgroundColor = GAME[gridIndex].color;
                     // pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
                 }
+                const blackPieces = document.querySelectorAll('div.grid > div.piece.black');
+                const whitePieces = document.querySelectorAll('div.grid > div.piece.white');
+                blackScore.innerText = blackPieces.length;
+                whiteScore.innerText = whitePieces.length;
             }
 
             while (GAME[oneAbove].color !== 'blank' && GAME[oneAbove].color !== GAME[gridIndex].color && !GAME[gridIndex].edge.includes('top') && !GAME[oneAbove].edge.includes('top')) {
@@ -106,6 +115,10 @@ for (let i = 0; i < 64; i++) {
                     // pieceToChange.style.backgroundColor = GAME[gridIndex].color;
                     // pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
                 }
+                const blackPieces = document.querySelectorAll('div.grid > div.piece.black');
+                const whitePieces = document.querySelectorAll('div.grid > div.piece.white');
+                blackScore.innerText = blackPieces.length;
+                whiteScore.innerText = whitePieces.length;
             }
 
             while (GAME[oneLeft].color !== 'blank' && GAME[oneLeft].color !== GAME[gridIndex].color && !GAME[gridIndex].edge.includes('left') && !GAME[oneLeft].edge.includes('left')) {
@@ -121,6 +134,10 @@ for (let i = 0; i < 64; i++) {
                     // pieceToChange.style.backgroundColor = GAME[gridIndex].color;
                     // pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
                 }
+                const blackPieces = document.querySelectorAll('div.grid > div.piece.black');
+                const whitePieces = document.querySelectorAll('div.grid > div.piece.white');
+                blackScore.innerText = blackPieces.length;
+                whiteScore.innerText = whitePieces.length;
             }
 
             while (GAME[oneRight].color !== 'blank' && GAME[oneRight].color !== GAME[gridIndex].color && !GAME[gridIndex].edge.includes('right') && !GAME[oneRight].edge.includes('right')) {
@@ -136,6 +153,10 @@ for (let i = 0; i < 64; i++) {
                     // pieceToChange.style.backgroundColor = GAME[gridIndex].color;
                     // pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
                 }
+                const blackPieces = document.querySelectorAll('div.grid > div.piece.black');
+                const whitePieces = document.querySelectorAll('div.grid > div.piece.white');
+                blackScore.innerText = blackPieces.length;
+                whiteScore.innerText = whitePieces.length;
             }
 
             while (GAME[oneLeftAbove].color !== 'blank' && GAME[oneLeftAbove].color !== GAME[gridIndex].color && !GAME[gridIndex].edge.includes('left') && !GAME[oneLeftAbove].edge.includes('left')) {
@@ -151,6 +172,10 @@ for (let i = 0; i < 64; i++) {
                     // pieceToChange.style.backgroundColor = GAME[gridIndex].color;
                     // pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
                 }
+                const blackPieces = document.querySelectorAll('div.grid > div.piece.black');
+                const whitePieces = document.querySelectorAll('div.grid > div.piece.white');
+                blackScore.innerText = blackPieces.length;
+                whiteScore.innerText = whitePieces.length;
             }
 
             while (GAME[oneRightAbove].color !== 'blank' && GAME[oneRightAbove].color !== GAME[gridIndex].color && !GAME[gridIndex].edge.includes('right') && !GAME[oneRightAbove].edge.includes('right')) {
@@ -166,6 +191,10 @@ for (let i = 0; i < 64; i++) {
                     // pieceToChange.style.backgroundColor = GAME[gridIndex].color;
                     // pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
                 }
+                const blackPieces = document.querySelectorAll('div.grid > div.piece.black');
+                const whitePieces = document.querySelectorAll('div.grid > div.piece.white');
+                blackScore.innerText = blackPieces.length;
+                whiteScore.innerText = whitePieces.length;
             }
 
             while (GAME[oneLeftBelow].color !== 'blank' && GAME[oneLeftBelow].color !== GAME[gridIndex].color && !GAME[gridIndex].edge.includes('bottom') && !GAME[oneBelow].edge.includes('bottom')) {
@@ -181,6 +210,10 @@ for (let i = 0; i < 64; i++) {
                     // pieceToChange.style.backgroundColor = GAME[gridIndex].color;
                     // pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
                 }
+                const blackPieces = document.querySelectorAll('div.grid > div.piece.black');
+                const whitePieces = document.querySelectorAll('div.grid > div.piece.white');
+                blackScore.innerText = blackPieces.length;
+                whiteScore.innerText = whitePieces.length;
             }
 
             while (GAME[oneRightBelow].color !== 'blank' && GAME[oneRightBelow].color !== GAME[gridIndex].color && !GAME[gridIndex].edge.includes('bottom') && !GAME[oneBelow].edge.includes('bottom')) {
@@ -196,11 +229,16 @@ for (let i = 0; i < 64; i++) {
                     // pieceToChange.style.backgroundColor = GAME[gridIndex].color;
                     // pieceToChange.style.border = 'solid ' + GAME[gridIndex].color;
                 }
+                const blackPieces = document.querySelectorAll('div.grid > div.piece.black');
+                const whitePieces = document.querySelectorAll('div.grid > div.piece.white');
+                blackScore.innerText = blackPieces.length;
+                whiteScore.innerText = whitePieces.length;
             }
         }
     }))
 }
 
+// Four initial pieces
 let initialPieces = [[27, 'white'], [28, 'black'], [35, 'black'], [36, 'white']];
 initialPieces.forEach((initial) => {
     const piece = document.createElement('div');
@@ -210,8 +248,8 @@ initialPieces.forEach((initial) => {
     document.getElementById('grid-' + initial[0]).appendChild(piece);
 })
 
-const blackScore = document.getElementById('blackScore');
-const whiteScore = document.getElementById('whiteScore');
+
+
 
 
 // const whitePiece1 = document.createElement('div');

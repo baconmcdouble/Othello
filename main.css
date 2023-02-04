@@ -21,7 +21,12 @@
     margin-right: 20px;
 }
 
-.btn {}
+#gameTurn {
+    color: white;
+    font-size: x-large;
+    padding-left: 50px;
+    font-weight: bold;
+}
 
 .board {
     background-color: #20c997;

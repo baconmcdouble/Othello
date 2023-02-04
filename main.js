@@ -42,6 +42,7 @@ const board = document.querySelector('.board');
 const blackScore = document.getElementById('blackScore');
 const whiteScore = document.getElementById('whiteScore');
 
+const gameTurn = document.getElementById('gameTurn');
 
 for (let i = 0; i < 64; i++) {
     const grid = document.createElement('div');
@@ -72,6 +73,8 @@ for (let i = 0; i < 64; i++) {
             } else if (GAME_TURN === 'black') {
                 GAME_TURN = 'white';
             }
+            gameTurn.innerText = GAME_TURN.toUpperCase();
+            gameTurn.style.color = GAME_TURN;
 
             let gridIndex = Number(grid.getAttribute('id').substring(5));
             let oneBelow = gridIndex + 8;
